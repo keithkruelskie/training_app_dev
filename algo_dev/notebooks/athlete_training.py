@@ -64,6 +64,10 @@ def create_workout(athlete_id, date, params):
     #Execute the code:
     db.execute(ins, this_workout)
     
+def read_workout(workout_id):
+    pass
+
+
 def update_workout(workout_id, new_params):
     
     #Defining the update statement:
@@ -75,6 +79,9 @@ def update_workout(workout_id, new_params):
     
     #And execute:
     db.execute(stmt)
+
+def delete_workout(workout_id):
+    pass
     
 #Import environment variables:
 user = os.getenv('TEST_DB_USER')
