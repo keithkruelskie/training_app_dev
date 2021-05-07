@@ -61,10 +61,12 @@ def create_workout(athlete_id, date, params):
     this_workout['workout_date'] = date
     this_workout['workout_id'] = get_next_workout_id()
     
+    #Execute the code:
     db.execute(ins, this_workout)
     
 def update_workout(workout_id, new_params):
     
+    #Defining the update statement:
     stmt = (
     update(workouts_table).
     where(workouts_table.c.workout_id == workout_id).
@@ -87,4 +89,5 @@ athlete_meta = MetaData(db)
 #access the athlete schema, where our table is stored:
 athlete_meta.reflect(bind=db, schema='athlete')
 
+#Define workouts_table:
 workouts_table = athlete_meta.tables['athlete.workouts']
